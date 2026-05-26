@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamScape AI | Image Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="main-wrapper">
+        <div class="container hero-container">
+            <div class="header-glow"></div>
+            <h2>DreamScape AI</h2>
+            <p class="subtitle" id="typewriter"></p>
+            
+            <div class="input-group">
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-wand-magic-sparkles input-icon"></i>
+                    <input type="text" id="prompt" placeholder="A cinematic portrait at golden hour, 8k resolution..." autocomplete="off"/>
+                </div>
+                <button onclick="generateImage()" class="primary-btn">
+                    <span>Generate</span>
+                    <i class="fa-solid fa-bolt"></i>
+                </button>
+            </div>
+            
+            <div class="loader-container" id="loader">
+                <div class="spinner-ring"></div>
+                <div class="loader-text">Synthesizing your vision...</div>
+            </div>
+            
+            <div class="image-wrapper">
+                <img id="result" src="" alt="Generated AI Image" />
+                
+                <div id="action-buttons" class="action-buttons">
+                    <button onclick="downloadImage()" class="icon-btn tooltip" data-tooltip="Download High-Res">
+                        <i class="fa-solid fa-download"></i>
+                    </button>
+                    <button onclick="saveDraft()" class="icon-btn tooltip" data-tooltip="Save to Gallery">
+                        <i class="fa-solid fa-bookmark"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container drafts-container" id="drafts-section" style="display: none;">
+            <div class="section-header">
+                <h3><i class="fa-solid fa-layer-group"></i> Your Masterpieces</h3>
+                <span class="draft-count" id="draft-count">0 items</span>
+            </div>
+            <div class="drafts-grid" id="drafts-grid"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
